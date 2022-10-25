@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  把padding和border算入宽度 */
+        * {
+            box-sizing: border-box;
+        }
+
+        .border {
+            width: 460px;
+            height: 470px;
+            background-color: rgb(255, 192, 203);
+            border-radius: 20px 20px 0 0;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+
+        /* 消除无序列表中的小黑点 */
+        ul {
+            list-style:none;
+            padding-left:0;
+        }
+
+        /* 设置li款式 */
+        ul li {
+            cursor: pointer;
+            position: relative;
+            padding: 12px 8px 12px 40px;
+            background-color: #eee;
+            font-size: 15px;
+            
+        }
+
+        /* 奇数li色彩差别，为了雅观(odd奇数行) */
+        ul li:nth-child(odd) {
+            background: #f9f9f9;
+        }
+
+        /* hover时背景色转变 */
+        ul li:hover {
+            background: #ddd;
+        }
+
+        /* 当被选中，笔墨中加横线 */
+        ul li.checked {
+            background: rgb(182, 137, 137);
+            color: #fff;
+            text-decoration: line-through;
+        }
+
+        /* 为被选中的li增添 “对勾” 图标 伪元素 */
+        ul li.checked::before {
+            content: '';
+            position: absolute;
+            border-color: #fff;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            top: 10px;
+            left: 16px;
+            transform: rotate(45deg);
+            height: 15px;
+            width: 7px;
+        }
+
+        /* 关闭按钮款式 */
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 12px 16px 12px 16px
+        }
+
+        .close:hover {
+            background-color:rgb(255, 192, 203);
+            color: white;
+        }
+
+        /* 头部款式 */
+        .header {
+            padding: 30px 40px;
+            color: white;
+            text-align: center;
+        }
+
+        /* 消灭浮动 */
+        .header:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* 输入框款式 */
+        input {
+            border: none;
+            width: 75%;
+            padding: 10px;
+            float: left;
+            font-size: 16px;
+            outline: 0;
+            border-radius: 10px 0 0 10px;
+        }
+
+        /* “Add”按钮款式 */
+        .addBtn {
+            padding: 9px 10px 8px;
+            width: 25%;
+            background-color: rgb(231,118,137);
+            color: rgb(105, 97, 97);
+            float: left;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 0 10px 10px 0;
+
+        }
+
+        .addBtn:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border">
+        <!-- 使命输入框 -->
+        <div id="myDIV" class="header">
+            <h2>My To Do List</h2>
+            <input type="text" id="myInput" placeholder="记录一下">
+            <span id="addButton" class="addBtn">Add</span>
+        </div>
+
+        <!-- 使命列表 -->
+        <ul id="myUL">
+            <li>做作业</li>
+            <li class="checked">追剧</li>
+            <li>看书</li>
+            <li>打游戏</li>
+            <li>绘画</li>
+            <li>逛超市</li>
+            <li>做家务</li>
+        </ul>
+    </div>
+</body>
+<script>
+    (function () {
+        var i; /*index*/
+
+        /*为每一个li背面加上关闭按钮*/
+        function closeBtn() {
+            var myNodelist = document.getElementsByTagName("li");
+            for (i = 0; i < myNodelist.length; i++) {
+                var span = document.createElement("span");
+                var txt = document.createTextNode("\u00D7"); /*unicode代码*/
+                span.className = "close";
+                span.appendChild(txt);
+                myNodelist[i].appendChild(span);
+            }
+        }
+
+        /*点击封闭按钮，隐蔽当前li*/
+        function closeElement() {
+            var close = document.getElementsByClassName("close");
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement; /*封闭按钮的父元素 - li*/
+                    div.style.display = "none";
+                }
+            }
+        }
+
+        /*点击li的时刻，加上.checked，再点击则作废*/
+        function ifChecked() {
+            var list = document.querySelector('ul');
+            list.onclick = function (ev) {
+                if (ev.target.tagName === 'LI') {
+                    ev.target.classList.toggle('checked');
+                }
+            }
+        }
+
+        /*点击增添时，建立一个新的li*/
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("请先输入一个详细使命。");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+            }
+            document.getElementById("myInput").value = ""; /*清空输入*/
+        }
+
+        /*初始化list*/
+        function initList() {
+            closeBtn();
+            closeElement();
+            ifChecked();
+        }
+
+        /*初始化*/
+        function init() {
+            var addButton = document.getElementById("addButton");
+            initList();
+
+            /*增添按钮点击时实行*/
+            addButton.onclick = function () {
+                newElement();
+                initList();
+            }
+
+            /*按回车时亦实行*/
+            document.onkeydown = function (event) {
+                if (event.keyCode == 13) {
+                    newElement();
+                    initList();
+                }
+            }
+        }
+
+        init();
+
+    })();
+</script>
+
+</html>

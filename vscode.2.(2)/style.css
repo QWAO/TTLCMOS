@@ -1,0 +1,41 @@
+.box{
+    padding:10px;
+    color:gray;
+
+}
+.grid-container{
+    display:grid;
+    width:630px;
+    height:630px;
+    grid-column-gap:10px;
+    grid-row-gap:10px;
+    grid-template-columns:150px 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px 150px;
+    background-color: black;
+    padding:10px;
+    grid-template-areas: "a b b c"
+                         "d b b e"
+                         "f f g h"
+                         "f f i j"
+    ;
+}
+.grid-container > div {   /*选中div下的所有子代*/
+    background-color:rgb(43,43,43);
+    text-align:left;
+    font-size:13px;
+    
+ 
+}
+
+.item2{
+    grid-row-start:1;
+    grid-row-end: 3;
+    grid-column-start:2;
+    grid-column-end:4;
+}
+.item6{
+    grid-row-start:3;
+    grid-row-end: 5;
+    grid-column-start:1;
+    grid-column-end:3;
+}

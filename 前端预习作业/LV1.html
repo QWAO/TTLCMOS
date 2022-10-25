@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 120px;
+            height: 100px;
+            background-color: pink;
+        }
+        img {
+            width: 200px;
+            height: 150px;
+        }
+        #w {
+            width: 300px;
+        }
+        .table {
+            width: 400px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <h2>这是我的二级标题</h2>
+    <p>百度一分钟，听人吹牛两小时</p>
+    <h3>这是我的三级标题</h3>
+    <img src="P1.jpg">
+    <div>我是一个宽120px高100px的一个颜色为粉色的盒子</div>
+    <a href="https://www.baidu.com" target="_blank">百度</a>
+    <ul>
+        <li>我</li>
+        <li>是</li>
+        <li>无</li>
+        <li>序</li>
+        <li>表</li>
+    </ul>
+    <hr/>
+    <form>
+        <input type="text" id="w" placeholder="我是一个宽300px但是输入什么都没用的输入框"/>
+        <button>不管怎么按都没用的按钮</button>
+    </form>
+    <p>下面是一个表格</p>
+    <table class="table" border="1" cellspacing="0">
+        <tr>
+            <td align="center">用户名:</td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td align="center">密码:</td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                <button>提交</button>
+                <input type="reset"/>
+            </td>
+        </tr>
+    </table>
+    <p>自我描述：</p>
+    <form action="">
+        性别：男<input type="radio" name="sex"/>女<input type="radio" name="sex" />
+        城市：<select>
+        <option selected="selected">重庆</option>
+        <option>四川</option>
+        <option>江苏</option>
+        <option>天津</option>
+        </select>
+        爱好：<input type="checkbox">打游戏<input type="checkbox">看电影<input type="checkbox">听音乐<input type="checkbox">运动
+        <p>目标：<textarea cols="19" rows="3" style="color:gray;">我要努力加入Web前端，加油！</textarea></p>
+    </form>
+    
+    
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .frist {
+            float: left;
+            color: black;
+            font-size: 10px;
+            text-align: center;
+            width: 50px;
+            height: 20px;
+        }
+        .right {
+            float: right;
+        }
+        .weight {
+            font-weight: 700;
+        }
+        .hao {
+            width: 60px;
+            height: 20px;
+            float: left;
+            color: black;
+            font-size: 10px;
+            text-align: center;
+        }
+        .border {
+            width: 50px;
+            height: 20px;
+            color: white;
+            text-decoration: none;
+            background-color: rgb(51,133,255);
+        }
+        .box {
+            width: 100%;
+            height: 50px;
+        }
+        .main{
+            width: 100%;
+            height: 140px;
+            overflow: hidden;
+        }
+        .picture {
+            text-align: center;
+            
+        }
+        /* 中间部分 */
+        .body {
+            text-align: center;
+            position: relative;
+            font-size: 0;
+        }
+        
+        .text {
+            width: 546px;
+            height: 34px;
+            font-size: 10px;
+        }
+
+        .submit {
+            width: 108px;
+            height: 40px;
+            color: white;
+            background-color: rgb(51,133,255);
+            font-size: 10px;
+            
+        }
+        /* 底部内容 */
+        .main1 {
+            width:100%;
+            height: 50%;
+            overflow: hidden;
+            margin-top: 150px;
+            text-align: center;
+        }
+        .p1 {
+            color: gray;
+        }
+        .foot{
+            /*border: 1px solid red;*/
+            width: 100%;
+            position: absolute;
+            bottom: 50px;
+            text-align: center;
+            margin-bottom: 5px;
+            margin-left: 500px;
+        }
+        .a1 {
+            float: left;
+            color: gray;
+            width: 100px;
+            height: 20px;
+            font-size: 12px;
+        }
+        .color {
+            color: gray;
+            width: 100%;
+            text-align: center;
+            margin-top: 60px;
+            font-size: 12px;
+        }
+        .a2 {
+            color: gray;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 右上部分 -->
+    <div class="right">
+        <a href="#" class="frist weight">新闻</a>
+        <a href="#" class="hao weight">hao123</a>
+        <a href="#" class="frist weight">地图</a>
+        <a href="#" class="frist weight">视频</a>
+        <a href="#" class="frist weight">贴吧</a>
+        <a href="#" class="frist weight">学术</a>
+        <a href="#" class="frist">登录</a>
+        <a href="#" class="frist">设置</a>
+        <a href="#" class="frist border">更多产品</a>
+    </div>
+    <!-- 中间部分加搜索框 -->
+    <div class="box"></div>
+    <div class="main">
+        <div class="picture">
+            <a target="blank" href="#"><img src="百度图标.png" width="350px" height="140px"></a>
+        </div>
+    </div>
+    <div class="body">
+        <form action="http://www.baidu.com">
+            <input type="text" class="text">
+            <button class="submit">百度一下</button>
+        </form>
+    </div>
+    <!-- 底部内容 -->
+    <div class="main1">
+        <img src="二维码.png" width="150px" height="100px">
+        </br>下载百度APP
+        <div class="p1">有事搜一搜，没事看一看</div>
+    </div>
+    <div class="foot">
+        <a href="#" class="a1">把百度作为首页</a>
+        <a href="#" class="a1">关于百度</a>
+        <a href="#" class="a1">About Baidu</a>
+        <a href="#" class="a1">百度推广</a>
+    </div>
+    <div class="color">
+        ©2019_Baidu&emsp;<a href="#" class="a2">使用百度前必读</a>&emsp;<a href="#" class="a2">意见反馈</a>&emsp;****证*********号KC制作__hhhhhhh号
+    </div>
+    
+</body>
+</html>
