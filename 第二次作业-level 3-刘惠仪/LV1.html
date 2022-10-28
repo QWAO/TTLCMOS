@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .box {
+            width: 500px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .box div {
+            width: 180px;
+            height: 50px;
+            background-color: grey;
+        }
+        /* 现在有一段HTML和CSS代码，用今天这节课学到的CSS选择器们完成标签内的要求，并使用Flex布局让box水平垂直居中。
+           要求：不能使用类名选择器和ID选择器（除了题目中的box），所有的要求都可以使用这节课学到的选择器完成。
+        */
+        a {
+            text-decoration: none;
+        }
+        p {
+            color: red;
+        }
+        .box div:hover {
+            background-color: yellow;
+        }
+
+        /* 趣味推理题 */
+        /* 已知让第一个li的字体大小变为20px的代码为：*/
+       .box ul li:nth-child(1) {
+            font-size: 20px;
+        }
+        /* 请让第二个和第三个li元素完成它们想要的变换！提示：大家可以查一下:nth-child伪类选择器*/
+        .box ul li:nth-child(2) {
+            font-size: 30px;
+        }
+        .box ul li:nth-child(3) {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="#">我不想要a标签默认的下划线</a>
+        <p>我的字体颜色是红色</p>
+        <div>鼠标悬停在我的上面时，我的背景颜色变成黄色</div>
+        <ul>
+            <li>我的字体大小是20px</li>
+            <li>我的字体大小是30px</li>
+            <li>我的字体大小是40px</li>
+        </ul>
+        <p>我的字体颜色是红色</p>
+    </div>
+</body>
+</html>
