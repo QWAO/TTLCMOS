@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body {
+	        height: 100%;
+        }
+        body {
+            display: flex;
+            justify-content: center;/*主轴上居中对齐*/
+            align-items: center;/*交叉轴上居中对齐*/
+        }
+        body>div {
+            width: 350px;
+            height: 420px;
+            border-radius: 8px 8px 8px 8px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+            transition: all 1s;
+        }
+        body>div:hover {
+            transform: scale(1.1);
+        }
+        img {
+            width: 350px;
+            height: 177px;
+            transition: all 1s;
+        }
+        div div:nth-child(1) {
+            width: 350px;
+            height: 177px;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+        }
+        img:hover {
+            transform: scale(1.2);
+        }
+        div div:nth-child(2) {
+            width:330px;
+            margin: auto;
+        }
+        p {
+            font-size: 12px;
+            color: rgb(67, 65, 71);
+        }
+        button {
+            width: 120px;
+            height:30px;
+            border: 0;
+            border-radius: 30px;
+            background-color: rgb(109,162,215);
+            color: white;
+            margin-left: 100px;
+        }
+        button:hover {
+            background-color: blue;
+        }
+        div>div>div {
+            font-size: 13px;
+            color:rgb(71, 71, 73);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div><img src="pic.jpeg"></div>
+        <div>
+            <h3>前端研发部</h3>
+            <div>将理想画成现实，让数据激发可能</div>
+            <p>
+                &emsp;&emsp;我们是想法的实现者，在这里，你可以把你天马行空的想象画成现实，利用手上的三剑客（HTML,CSS,JS）
+                绘画出绚丽的光景；在这里，你亦可以利用身边的工具（nodejs,ts,react等)让数据激发无限潜能，创造属于自己的一万种
+                可能。加入我们，一起去前端的世界探索未知！
+            </p>
+            <button>加入我们</button>
+        </div>
+    </div>
+</body>
+</html>
