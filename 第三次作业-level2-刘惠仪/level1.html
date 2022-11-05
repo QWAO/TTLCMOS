@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 实现一个类似像数组的 push 方法的一个函数
+        function myPush(parameter){
+            for(var i=0;i<parameter.length;i++)
+            {
+                arr[i]=parameter[i];
+            }
+            return arr;
+        }
+        let arr=[1];
+        let parameter=[arr[0],2,3,4,5];
+        let arr1=myPush(parameter);
+        console.log(arr1);
+        console.log(arr1.length);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
