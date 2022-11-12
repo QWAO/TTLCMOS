@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> 
+        //  使用Object( )构造函数
+        let obj=new Object();
+        obj.name="tom";
+        obj.age="28";
+        obj.gender="男";
+        console.log(obj);
+        // 使用对象字面量
+        let obj2={
+            name:"jeffery",
+            age:"26",
+            gender:"男"
+        }
+        console.log(obj2);
+        // 使用构造函数创建对象
+        function Person(name,age,gender) { 
+            this.name=name;
+            this.age=age;
+            this.gender=gender;
+            this.sayName=function(){
+                console.log(this.name);
+            };
+        } 
+        const per=new Person("jack","27","男");
+        const per2=new Person("maray","24","女");
+        console.log(per);
+        console.log(per2);
+       </script> 
+</head>
+<body>
+</body>
+</html>
