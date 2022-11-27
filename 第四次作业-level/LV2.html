@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 编写函数fn，让上面的stu对象中的speak方法对stu.name起作用，不能使用call，bind，apply函数
+        const stu = {
+            name: 'MING',
+            skills: {
+                speak() {
+                    this.name = 'JACK';
+                }
+            }
+        }
+        const fn = function (obj) {
+            obj.speak=obj.skills.speak;
+            obj.speak();
+        }
+        fn(stu);
+        console.log(stu.name); //JACK
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
