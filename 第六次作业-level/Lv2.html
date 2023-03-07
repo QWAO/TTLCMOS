@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+
+        p {
+            width: 50px;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+            border-radius: 50% 50% 50% 50%;
+        }
+
+        .p1 {
+            background-color: rgb(73, 160, 211);
+        }
+
+        .p2 {
+            background-color: orange;
+        }
+
+        .p3 {
+            background-color: gray;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0px);
+            }
+
+            100% {
+                transform: translateX(100px);
+            }
+        }
+
+        .move {
+            animation-name: move;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- promise链式回调 -->
+    <div>
+        <p class="p1"></p>
+        <p class="p2"></p>
+        <p class="p3"></p>
+    </div>
+    <script>
+        var p1 = document.querySelector(".p1");
+        var p2 = document.querySelector(".p2");
+        var p3 = document.querySelector(".p3");
+        let p = new Promise(function (myResolve, myReject) {
+            p1.classList.add('move');
+            setTimeout(function () { myResolve(" p1.classList.add('move')"); }, 1000);
+        });
+        p.then(function () {
+            p2.classList.add('move');
+        });
+        let pp = new Promise(function (myResolve, myReject) {
+            setTimeout(function () { myResolve("p2.classList.add('move')"); }, 2000);
+        });
+        pp.then(function () {
+            p3.classList.add('move');
+        });
+    </script>
+</body>
+
+</html>
