@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+
+        p {
+            width: 50px;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+            border-radius: 50% 50% 50% 50%;
+        }
+
+        .p1 {
+            background-color: rgb(73, 160, 211);
+        }
+
+        .p2 {
+            background-color: orange;
+        }
+
+        .p3 {
+            background-color: gray;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0px);
+            }
+
+            100% {
+                transform: translateX(100px);
+            }
+        }
+
+        .move {
+            animation-name: move;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- aysnc await异步队列 -->
+    <div>
+        <p class="p1"></p>
+        <p class="p2"></p>
+        <p class="p3"></p>
+    </div>
+
+</body>
+<script>
+    var p1 = document.querySelector(".p1");
+    var p2 = document.querySelector(".p2");
+    var p3 = document.querySelector(".p3");
+    let step1 = (time) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(p1.classList.add('move'));
+            }, time);
+
+        });
+    }
+    let step2 = (time) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(p2.classList.add('move'));
+            }, time);
+
+        });
+    }
+    let step3 = (time) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(p3.classList.add('move'));
+            }, time);
+
+        });
+    }
+    async function demo() {
+        let p11 = await step1(1000);
+        let p22 = await step2(1500);
+        let p33 = await step3(2000);
+    }
+    demo().then((res) => {
+        console.log(res);
+    });
+
+</script>
+
+</html>
